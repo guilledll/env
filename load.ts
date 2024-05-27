@@ -2,7 +2,7 @@
  * Automatically load environment variables into the application.
  * By default this module supports loading an `.env` file, if
  * a different behavior is needed please use the `initEnv()`
- * function from `@guidev/env` with the custom file name.
+ * function from `@guilledll/env` with the custom file name.
  * 
  * @module load
  */

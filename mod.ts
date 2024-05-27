@@ -30,7 +30,7 @@ export function setEnv(name: string, value: string): void {
  * 
  * @example
  * ```ts
- * import { getEnv } from "@guidev/env";
+ * import { getEnv } from "@guilledll/env";
  * 
  * getEnv('DB_HOST'); // '127.0.0.1'
  * ```
@@ -43,7 +43,7 @@ export function getEnv(name: string): string | undefined;
  * 
  * @example
  * ```ts
- * import { getEnv } from "@guidev/env";
+ * import { getEnv } from "@guilledll/env";
  * 
  * getEnv('DB_HOST', 'DB_HOST'); // ['127.0.0.1', '5432']
  * ```
@@ -66,7 +66,7 @@ export function getEnv(...args: string[]): string | undefined | (string | undefi
  * 
  * @example
  * ```ts
- * import { hasEnv } from "@guidev/env";
+ * import { hasEnv } from "@guilledll/env";
  * 
  * hasEnv('DB_HOST'); // true
  * hasEnv('NON_EXIST'); // false
@@ -80,7 +80,7 @@ export function hasEnv(name: string): boolean;
  * 
  * @example
  * ```ts
- * import { hasEnv } from "@guidev/env";
+ * import { hasEnv } from "@guilledll/env";
  * 
  * hasEnv('DB_HOST', 'NON_EXIST'); // [true, false]
  * ```
@@ -103,7 +103,7 @@ export function hasEnv(...args: string[]): boolean | boolean[] {
  * 
  * @example
  * ```ts
- * import { hasEnvAll } from "@guidev/env";
+ * import { hasEnvAll } from "@guilledll/env";
  * 
  * hasEnvAll('DB_HOST', 'MAIL_USER'); // true
  * hasEnvAll('DB_HOST', 'NON_EXIST'); // false
@@ -120,7 +120,7 @@ export function hasEnvAll(...names: string[]): boolean {
  * 
  * @example
  * ```ts
- * import { delEnv } from "@guidev/env";
+ * import { delEnv } from "@guilledll/env";
  * 
  * delEnv('DB_HOST');
  * getEnv('DB_HOST'); // undefined
@@ -134,7 +134,7 @@ export function delEnv(name: string): void;
  * 
  * @example
  * ```ts
- * import { delEnv } from "@guidev/env";
+ * import { delEnv } from "@guilledll/env";
  * 
  * delEnv('DB_HOST', 'DB_PORT');
  * getEnv('DB_HOST', 'DB_PORT'); // [undefined, undefined]
