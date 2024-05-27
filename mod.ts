@@ -45,7 +45,7 @@ export function getEnv(name: string): string | undefined;
  * ```ts
  * import { getEnv } from "@guilledll/env";
  * 
- * getEnv('DB_HOST', 'DB_HOST'); // ['127.0.0.1', '5432']
+ * getEnv('DB_HOST', 'DB_PORT'); // ['127.0.0.1', '5432']
  * ```
  *
  * @param names - Names of the variables
