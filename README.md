@@ -25,11 +25,11 @@ deno add @guille/env
 **Auto load** the .env file or **manually load** with custom filename:
 
 ```js
-import '@guille/env/load';
+import 'jsr:@guille/env/load';
 
 // === OR ===
 
-import { initEnv } from '@guille/env';
+import { initEnv } from 'jsr:@guille/env';
 
 await initEnv('.env.local');
 ```
@@ -37,7 +37,7 @@ await initEnv('.env.local');
 Get **single** or **multiple variables** at once:
 
 ```js
-import { getEnv } from '@guille/env';
+import { getEnv } from 'jsr:@guille/env';
 
 const host = getEnv('DB_HOST'); // '127.0.0.1'
 const [host, port] = getEnv('DB_HOST', 'DB_HOST'); // ['127.0.0.1', '5432']
@@ -46,7 +46,7 @@ const [host, port] = getEnv('DB_HOST', 'DB_HOST'); // ['127.0.0.1', '5432']
 Check existence of **single** or **multiple variables**:
 
 ```js
-import { hasEnv } from '@guille/env';
+import { hasEnv } from 'jsr:@guille/env';
 
 if (hasEnv('FEATURE_ENABLED')) {
   // Do things....
@@ -58,7 +58,7 @@ const [driver, port] = hasEnv('MAIL_DRIVER', 'WRONG'); // [true, false]
 Check if **all variables exists**, useful to validate feature access:
 
 ```js
-import { hasEnvAll } from '@guille/env';
+import { hasEnvAll } from 'jsr:@guille/env';
 
 if (hasEnvAll('MAIL_DRIVER', 'MAIL_PORT', 'MAIL_USER')) {
   // Proceed to send emails....
@@ -68,7 +68,7 @@ if (hasEnvAll('MAIL_DRIVER', 'MAIL_PORT', 'MAIL_USER')) {
 Manually **set variables** at runtime:
 
 ```js
-import { setEnv } from '@guille/env';
+import { setEnv } from 'jsr:@guille/env';
 
 setEnv('QUEUE_AMOUNT', '35');
 const queueAmount = getEnv('QUEUE_AMOUNT'); // '35'
@@ -77,7 +77,7 @@ const queueAmount = getEnv('QUEUE_AMOUNT'); // '35'
 Delete **single** or **multiple variables** from environment:
 
 ```js
-import { delEnv } from '@guille/env';
+import { delEnv } from 'jsr:@guille/env';
 
 delEnv('DB_HOST');
 const host = getEnv('DB_HOST'); // undefined

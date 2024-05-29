@@ -26,7 +26,7 @@ export function setEnv(name: string, value: string): void {
  *
  * @example
  * ```ts
- * import { getEnv } from "@guille/env";
+ * import { getEnv } from "jsr:@guille/env";
  *
  * getEnv('DB_HOST'); // '127.0.0.1'
  * ```
@@ -39,7 +39,7 @@ export function getEnv(name: string): string | undefined;
  *
  * @example
  * ```ts
- * import { getEnv } from "@guille/env";
+ * import { getEnv } from "jsr:@guille/env";
  *
  * getEnv('DB_HOST', 'DB_PORT'); // ['127.0.0.1', '5432']
  * ```
@@ -62,7 +62,7 @@ export function getEnv(...names: string[]): string | undefined | (string | undef
  *
  * @example
  * ```ts
- * import { hasEnv } from "@guille/env";
+ * import { hasEnv } from "jsr:@guille/env";
  *
  * hasEnv('DB_HOST'); // true
  * hasEnv('NON_EXIST'); // false
@@ -76,7 +76,7 @@ export function hasEnv(name: string): boolean;
  *
  * @example
  * ```ts
- * import { hasEnv } from "@guille/env";
+ * import { hasEnv } from "jsr:@guille/env";
  *
  * hasEnv('DB_HOST', 'NON_EXIST'); // [true, false]
  * ```
@@ -99,7 +99,7 @@ export function hasEnv(...names: string[]): boolean | boolean[] {
  *
  * @example
  * ```ts
- * import { hasEnvAll } from "@guille/env";
+ * import { hasEnvAll } from "jsr:@guille/env";
  *
  * hasEnvAll('DB_HOST', 'MAIL_USER'); // true
  * hasEnvAll('DB_HOST', 'NON_EXIST'); // false
@@ -116,7 +116,7 @@ export function hasEnvAll(...names: string[]): boolean {
  *
  * @example
  * ```ts
- * import { delEnv } from "@guille/env";
+ * import { delEnv, getEnv } from "jsr:@guille/env";
  *
  * delEnv('DB_HOST');
  * getEnv('DB_HOST'); // undefined
@@ -130,7 +130,7 @@ export function delEnv(name: string): void;
  *
  * @example
  * ```ts
- * import { delEnv } from "@guille/env";
+ * import { delEnv, getEnv } from "jsr:@guille/env";
  *
  * delEnv('DB_HOST', 'DB_PORT');
  * getEnv('DB_HOST', 'DB_PORT'); // [undefined, undefined]
