@@ -50,7 +50,7 @@ function parseEnvContent(envContent: string): ParsedEnv {
 
 /**
  * Load the environment file.
- * 
+ *
  * @param envPath - Path of the `.env` file
  * @returns Parsed content from `.env` file
  */
@@ -61,7 +61,7 @@ export async function loadEnvFile(envPath: string = '.env'): Promise<ParsedEnv> 
 
 /**
  * Exposed for testing purposes.
- * 
+ *
  * @internal
  */
 export const _internal = { loadEnvFile, parseEnvContent, envValueUsesQuotes };

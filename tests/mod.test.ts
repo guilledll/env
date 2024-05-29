@@ -73,22 +73,22 @@ Deno.test('hasEnv()', async (t) => {
     setEnv('SIMPLY_UY_4', 'guille');
     setEnv('SIMPLY_UY_5', 'simply');
 
-    const v = hasEnv('SIMPLY_UY_4', "SIMPLY_UY_5");
+    const v = hasEnv('SIMPLY_UY_4', 'SIMPLY_UY_5');
 
     assertInstanceOf(v, Array);
     assertEquals(v[0], true);
     assertEquals(v[1], true);
-  })
+  });
 
   await t.step('returns false in the array of values when var not found', () => {
     setEnv('SIMPLY_UY_6', 'simply');
 
-    const v = hasEnv("SIMPLY_UY_6", 'SIMPLY_UY_NON_EXIST');
+    const v = hasEnv('SIMPLY_UY_6', 'SIMPLY_UY_NON_EXIST');
 
     assertInstanceOf(v, Array);
     assertEquals(v[0], true);
     assertEquals(v[1], false);
-  })
+  });
 });
 
 Deno.test('hasEnvAll()', async (t) => {
@@ -108,7 +108,7 @@ Deno.test('hasEnvAll()', async (t) => {
 
     assertEquals(v, false);
   });
-})
+});
 
 Deno.test('getEnv()', async (t) => {
   await t.step('returns correct value when it exists', () => {
@@ -127,22 +127,22 @@ Deno.test('getEnv()', async (t) => {
     setEnv('TEST_GET_3', 'guille');
     setEnv('TEST_GET_4', 'simply');
 
-    const v = getEnv('TEST_GET_3', "TEST_GET_4");
+    const v = getEnv('TEST_GET_3', 'TEST_GET_4');
 
     assertInstanceOf(v, Array);
     assertEquals(v[0], 'guille');
     assertEquals(v[1], 'simply');
-  })
+  });
 
   await t.step('returns undefined in the array of values when var not found', () => {
     setEnv('TEST_GET_5', 'trufa');
 
-    const v = getEnv("TEST_GET_X", 'TEST_GET_5');
+    const v = getEnv('TEST_GET_X', 'TEST_GET_5');
 
     assertInstanceOf(v, Array);
     assertEquals(v[0], undefined);
     assertEquals(v[1], 'trufa');
-  })
+  });
 });
 
 Deno.test('delEnv()', async (t) => {
@@ -168,5 +168,5 @@ Deno.test('delEnv()', async (t) => {
 
     assertExists(!getEnv('TEST_DEL_3'));
     assertExists(!getEnv('TEST_DEL_4'));
-  })
+  });
 });

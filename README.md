@@ -10,7 +10,7 @@ Complete set of utils manage environment variables in [Deno](https://deno.com/) 
 
 - **Set, Get, Check and Delete:** Simple functions to handle all your variables.
 - **Intuitive and fully documented API:** Handle single or multiple variables with ease.
-- **Custom environment filename:** Supports loading .env file with custom naming. 
+- **Custom environment filename:** Supports loading .env file with custom naming.
 - **Auto loading variables:** If preferred, use one line to load your .env file.
 - **Fully tested:** 100% code and branch coverage using Deno test utils.
 
@@ -49,7 +49,7 @@ Check existence of **single** or **multiple variables**:
 import { hasEnv } from '@guille/env';
 
 if (hasEnv('FEATURE_ENABLED')) {
-    // Do things....
+  // Do things....
 }
 
 const [driver, port] = hasEnv('MAIL_DRIVER', 'WRONG'); // [true, false]
@@ -61,7 +61,7 @@ Check if **all variables exists**, useful to validate feature access:
 import { hasEnvAll } from '@guille/env';
 
 if (hasEnvAll('MAIL_DRIVER', 'MAIL_PORT', 'MAIL_USER')) {
-    // Proceed to send emails....
+  // Proceed to send emails....
 }
 ```
 
@@ -85,11 +85,13 @@ const host = getEnv('DB_HOST'); // undefined
 
 ## Issues
 
-Any question of issue found? Please rise it on the [Issues](https://github.com/guille/env/issues) page.
+Any question of issue found? Please rise it on the [Issues](https://github.com/guille/env/issues)
+page.
 
 ## Contributing
 
-Thanks for considering contributing to this project! Please make a [Pull Request](https://github.com/guille/env/pulls) to see your contribution added!
+Thanks for considering contributing to this project! Please make a
+[Pull Request](https://github.com/guille/env/pulls) to see your contribution added!
 
 ## License
 
