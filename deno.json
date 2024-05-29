@@ -1,5 +1,5 @@
 {
-  "name": "@guilledll/env",
+  "name": "@guille/env",
   "version": "1.0.0",
   "exports": {
     ".": "./mod.ts",
