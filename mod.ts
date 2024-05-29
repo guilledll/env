@@ -1,6 +1,6 @@
 /**
  * This module contains functions to interact with environment variables.
- * 
+ *
  * @module env
  */
 
@@ -27,11 +27,11 @@ export function setEnv(name: string, value: string): void {
 
 /**
  * Get the given environment variable.
- * 
+ *
  * @example
  * ```ts
  * import { getEnv } from "@guille/env";
- * 
+ *
  * getEnv('DB_HOST'); // '127.0.0.1'
  * ```
  *
@@ -40,11 +40,11 @@ export function setEnv(name: string, value: string): void {
 export function getEnv(name: string): string | undefined;
 /**
  * Get multiple environment variables.
- * 
+ *
  * @example
  * ```ts
  * import { getEnv } from "@guille/env";
- * 
+ *
  * getEnv('DB_HOST', 'DB_PORT'); // ['127.0.0.1', '5432']
  * ```
  *
@@ -55,7 +55,7 @@ export function getEnv(...args: string[]): string | undefined | (string | undefi
   const get = (v: string) => Deno.env.get(v);
 
   if (args.length === 1) {
-    return get(args[0])
+    return get(args[0]);
   }
 
   return args.map((v) => get(v));
@@ -63,11 +63,11 @@ export function getEnv(...args: string[]): string | undefined | (string | undefi
 
 /**
  * Check if the given variable exists.
- * 
+ *
  * @example
  * ```ts
  * import { hasEnv } from "@guille/env";
- * 
+ *
  * hasEnv('DB_HOST'); // true
  * hasEnv('NON_EXIST'); // false
  * ```
@@ -77,11 +77,11 @@ export function getEnv(...args: string[]): string | undefined | (string | undefi
 export function hasEnv(name: string): boolean;
 /**
  * Check if multiple variables exists.
- * 
+ *
  * @example
  * ```ts
  * import { hasEnv } from "@guille/env";
- * 
+ *
  * hasEnv('DB_HOST', 'NON_EXIST'); // [true, false]
  * ```
  *
@@ -95,33 +95,33 @@ export function hasEnv(...args: string[]): boolean | boolean[] {
     return has(args[0]);
   }
 
-  return args.map(v => has(v))
+  return args.map((v) => has(v));
 }
 
 /**
  * Check if all variables exists on the environment.
- * 
+ *
  * @example
  * ```ts
  * import { hasEnvAll } from "@guille/env";
- * 
+ *
  * hasEnvAll('DB_HOST', 'MAIL_USER'); // true
  * hasEnvAll('DB_HOST', 'NON_EXIST'); // false
  * ```
- * 
+ *
  * @param names - Variable names to check
  */
 export function hasEnvAll(...names: string[]): boolean {
-  return names.every(v => hasEnv(v));
+  return names.every((v) => hasEnv(v));
 }
 
 /**
  * Remove a variable from the environment.
- * 
+ *
  * @example
  * ```ts
  * import { delEnv } from "@guille/env";
- * 
+ *
  * delEnv('DB_HOST');
  * getEnv('DB_HOST'); // undefined
  * ```
@@ -131,18 +131,18 @@ export function hasEnvAll(...names: string[]): boolean {
 export function delEnv(name: string): void;
 /**
  * Remove multiple variables from the environment.
- * 
+ *
  * @example
  * ```ts
  * import { delEnv } from "@guille/env";
- * 
+ *
  * delEnv('DB_HOST', 'DB_PORT');
  * getEnv('DB_HOST', 'DB_PORT'); // [undefined, undefined]
  * ```
  *
  * @param name - Names of the variables
  */
-export function delEnv(...names: string[]): void
+export function delEnv(...names: string[]): void;
 export function delEnv(...names: string[]): void {
   const del = (v: string) => Deno.env.delete(v);
 
@@ -150,5 +150,5 @@ export function delEnv(...names: string[]): void {
     return del(names[0]);
   }
 
-  return names.forEach(v => del(v));
+  return names.forEach((v) => del(v));
 }
