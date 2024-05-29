@@ -1,6 +1,6 @@
 {
   "name": "@guille/env",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "exports": {
     ".": "./mod.ts",
     "./load": "./load.ts"
@@ -21,6 +21,6 @@
     "@std/testing": "jsr:@std/testing@^0.224.0"
   },
   "publish": {
-    "exclude": ["tests", ".env", "coverage"]
+    "exclude": ["tests", "coverage", ".github"]
   }
 }
