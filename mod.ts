@@ -2,8 +2,10 @@ import { _internal } from './src/utils.ts';
 
 /**
  * Load `.env` file variables into the application.
+ *
+ * @param [envPath='.env'] - Relative path to the environment file
  */
-export async function initEnv(envPath: string = '.env') {
+export async function initEnv(envPath: string = '.env'): Promise<void> {
   const envObject = await _internal.loadEnvFile(envPath);
 
   Object.entries(envObject).forEach(([name, value]) => setEnv(name, value));
@@ -44,15 +46,15 @@ export function getEnv(name: string): string | undefined;
  *
  * @param names - Names of the variables
  */
-export function getEnv(...args: string[]): (string | undefined)[];
-export function getEnv(...args: string[]): string | undefined | (string | undefined)[] {
+export function getEnv(...names: string[]): (string | undefined)[];
+export function getEnv(...names: string[]): string | undefined | (string | undefined)[] {
   const get = (v: string) => Deno.env.get(v);
 
-  if (args.length === 1) {
-    return get(args[0]);
+  if (names.length === 1) {
+    return get(names[0]);
   }
 
-  return args.map((v) => get(v));
+  return names.map((v) => get(v));
 }
 
 /**
@@ -81,15 +83,15 @@ export function hasEnv(name: string): boolean;
  *
  * @param names - Names of the variables
  */
-export function hasEnv(...args: string[]): boolean[];
-export function hasEnv(...args: string[]): boolean | boolean[] {
+export function hasEnv(...names: string[]): boolean[];
+export function hasEnv(...names: string[]): boolean | boolean[] {
   const has = (v: string) => Deno.env.has(v);
 
-  if (args.length === 1) {
-    return has(args[0]);
+  if (names.length === 1) {
+    return has(names[0]);
   }
 
-  return args.map((v) => has(v));
+  return names.map((v) => has(v));
 }
 
 /**
@@ -134,7 +136,7 @@ export function delEnv(name: string): void;
  * getEnv('DB_HOST', 'DB_PORT'); // [undefined, undefined]
  * ```
  *
- * @param name - Names of the variables
+ * @param names - Names of the variables
  */
 export function delEnv(...names: string[]): void;
 export function delEnv(...names: string[]): void {
