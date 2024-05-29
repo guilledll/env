@@ -85,13 +85,13 @@ const host = getEnv('DB_HOST'); // undefined
 
 ## Issues
 
-Any question of issue found? Please rise it on the [Issues](https://github.com/guille/env/issues)
+Any question of issue found? Please rise it on the [Issues](https://github.com/guilledll/env/issues)
 page.
 
 ## Contributing
 
 Thanks for considering contributing to this project! Please make a
-[Pull Request](https://github.com/guille/env/pulls) to see your contribution added!
+[Pull Request](https://github.com/guilledll/env/pulls) to see your contribution added!
 
 ## License
 
