@@ -1,9 +1,3 @@
-/**
- * This module contains functions to interact with environment variables.
- *
- * @module env
- */
-
 import { _internal } from './src/utils.ts';
 
 /**
