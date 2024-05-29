@@ -4,7 +4,7 @@
  * a different behavior is needed please use the `initEnv()`
  * function from `@guille/env` with the custom file name.
  *
- * @module load
+ * @module
  */
 
 import { initEnv } from './mod.ts';
