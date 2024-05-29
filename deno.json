@@ -1,12 +1,13 @@
 {
   "name": "@guille/env",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "exports": {
     ".": "./mod.ts",
     "./load": "./load.ts"
   },
   "tasks": {
     "test": "deno test --allow-env --allow-read --coverage",
+    "pre-commit": "deno lint && deno fmt",
     "publish-dry": "deno publish --dry-run"
   },
   "fmt": {
